@@ -1,0 +1,42 @@
+{
+  "tatum": {
+    "webHookDepositUrl": "http://18.185.172.131:8001/api/v1/hook/incoming",
+    "webHookWithdrawUrl": "http://18.185.172.131:8001/api/v1/hook/outgoing"
+  },
+  "databases": {
+    "postgres": {
+      "sync": {
+        "force": false,
+        "alter": false
+      },
+      "database": "postgres",
+      "username": "walinauser",
+      "password": "4uptv63QhuZHh7RR",
+      "options": {
+        "host": "walina.cpw5dt1fzczv.eu-central-1.rds.amazonaws.com",
+        "port": 5432,
+        "dialect": "postgres",
+        "logging": false,
+        "operationAliases": false,
+        "define": {
+          "charset": "utf8",
+          "collate": "utf8_general_ci"
+        },
+        "pool": {
+          "max": 10,
+          "min": 0,
+          "acquire": 30000,
+          "idle": 1000
+        }
+      }
+    }
+  },
+  "services": {
+    "rabbitmq": {
+      "url": "amqp://admin:jzqP5s9spcM33SVssUE2Ez@18.185.172.131"
+    }
+  },
+  "authentication": {
+    "apiKey": "53dd7e17-2a3a-484d-a947-2171b020cec2"
+  }
+}

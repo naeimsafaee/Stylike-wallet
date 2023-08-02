@@ -1,0 +1,94 @@
+{
+  "tatum": {
+    "webHookDepositUrl": "http://3.76.9.94:8001/api/v1/hook/incoming",
+    "webHookWithdrawUrl": "http://3.76.9.94:8001/api/v1/hook/outgoing"
+  },
+  "databases": {
+    "redis": {
+      "cache": {
+        "host": "3.76.9.94",
+        "port": 6379,
+        "password": "uPAU1A7uGPqPk2z0iOAbOJNrmPt4hWOWXzNZmyntUIpB9cUVRoBqHdKN50bhFatbTxTNSSOd0uMoKS+u",
+        "no_ready_check": true,
+        "db": 3
+      }
+    },
+    "postgres": {
+      "sync": {
+        "force": false,
+        "alter": false
+      },
+      "database": "postgres",
+      "username": "walinauser",
+      "password": "PzM2o7Y3V5G86RcEF24r",
+      "options": {
+        "host": "walina.cpw5dt1fzczv.eu-central-1.rds.amazonaws.com",
+        "port": 5432,
+        "dialect": "postgres",
+        "logging": false,
+        "operationAliases": false,
+        "define": {
+          "charset": "utf8",
+          "collate": "utf8_general_ci"
+        },
+        "pool": {
+          "max": 10,
+          "min": 0,
+          "acquire": 30000,
+          "idle": 1000
+        }
+      }
+    }
+  },
+  "services": {
+    "rabbitmq": {
+      "url": "amqp://admin:jzqP5s9spcM33SVssUE2Ez@3.76.9.94"
+    }
+  },
+  "authentication": {
+    "apiKey": "492ca4f0-0211-489f-b5e9-961dcc381434"
+  },
+  "swap_limit": [
+    {
+      "token":"STL_BSC",
+      "limit":1000
+    }
+  ],
+  "bsc_rpc_url": "https://rpc.ankr.com/bsc",
+  "tron_rpc_url": "https://rpc.ankr.com/http/tron",
+  "eth_rpc_url": "https://rpc.ankr.com/eth_goerli",
+  "cron": {
+    "zero_balance_notification": {
+      "executionـtime": "0 */1 * * * *",
+      "notification_at": 300,
+      "origin_tokens": [
+        {"symbol": "BSC", "min": 1},
+        {"symbol": "USDT_BSC", "min": 1},
+        {"symbol": "STL_BSC", "min": 1},
+        {"symbol": "STYL_BSC", "min": 1},
+        {"symbol": "BUSD_BSC", "min": 1},
+        {"symbol": "USDT_TRON", "min": 1}
+      ],
+      "swap_tokens": [
+        {"symbol": "BSC", "min": 1},
+        {"symbol": "USDT_BSC", "min": 1},
+        {"symbol": "STL_BSC", "min": 1},
+        {"symbol": "STYL_BSC", "min": 1},
+        {"symbol": "BUSD_BSC", "min": 1}
+      ]
+    },
+    "swap_transaction_handler": {
+      "executionـtime": "* * * * * *"
+    }
+  },
+  "telegram": {
+    "bot_token": "5630085868:AAEqUeKKplnFgslm5YBURqY7ZYk6nd2YLIw",
+    "channels": [
+
+    ]
+  },
+  "swap":{
+    "bsc_router_address": "0x10ed43c718714eb63d5aa57b78b54704e256024e",
+    "eth_router_address": ""
+  }
+}
